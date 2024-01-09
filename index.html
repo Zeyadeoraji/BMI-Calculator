@@ -5,50 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>BMI Calculator</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Courier New", Courier, monospace;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: salmon;
-      }
-      .container {
-        width: 60%;
-        max-width: 400px;
-        background: rgba(255, 255, 255, 0.3);
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-        border-radius: 10px;
-      }
-      .heading {
-        font-size: 25px;
-        text-align: center;
-      }
-      .input {
-        height: 18px;
-        margin: 10px;
-      }
-      .btn {
-        margin: 10px;
-        padding: 10px 15px;
-        background: rgba(255, 255, 255, 0.7);
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      }
-      .btn:hover {
-        background: rgba(255, 255, 255, 0.3);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
-        transition: all ease 0.2s;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -76,32 +32,6 @@
         <span class="Weight-condition" id="weight-condition"></span>
       </h3>
     </div>
-    <script>
-      const btnEl = document.getElementById("btn");
-      const valueInputEl = document.getElementById("value");
-      const resultEl = document.getElementById("weight-condition");
-      //   btnEl.addEventListener("click", BMICalculator);
-
-      function BMICalculator() {
-        const heightValue = document.getElementById("Height").value / 100;
-        const weightValue = document.getElementById("weight").value;
-        // console.log(heightValue, weightValue);
-        const BmiValue = weightValue / (heightValue * heightValue);
-        valueInputEl.value = BmiValue;
-        console.log(BmiValue);
-
-        if (BmiValue < 18.5) {
-          resultEl.innerHTML = "underWeight";
-        } else if (BmiValue >= 18.5 && BmiValue <= 24.9) {
-          resultEl.innerHTML = "normal";
-        } else if (BmiValue >= 25 && BmiValue <= 29.9) {
-          resultEl.innerHTML = "Over Weight";
-        } else if (BmiValue >= 30) {
-          resultEl.innerHTML = "obesity";
-        }
-      }
-      btnEl.addEventListener("click", BMICalculator);
-    </script>
     <script src="Main.js"></script>
   </body>
 </html>
